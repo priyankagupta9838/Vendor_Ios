@@ -58,6 +58,7 @@ class _OngoingServicesState extends State<OngoingServices> {
                           width: size.width * 0.98,
                           child: ListView.builder(
                             itemCount:data["data"].length,
+
                             padding: EdgeInsets.only(top: size.height*0.01,left: size.width*0.01,right: size.width*0.01),
 
                             itemBuilder: (context, index) {

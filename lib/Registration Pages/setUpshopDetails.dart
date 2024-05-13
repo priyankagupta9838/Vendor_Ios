@@ -233,14 +233,14 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
                                         fileSizeInBytes / 1024;
                                     double fileSizeInMB =
                                         fileSizeInKB / 1024;
-                                    if (fileSizeInMB <= 7) {
+                                    if (fileSizeInMB <= 2) {
                                       setState(() {
                                         shopCoverPhotoPath = value.toString();
                                       });
 
                                     } else {
 
-                                      UtilityFunctions().errorToast("Please select the image less than or equal to 7 mb ");
+                                      UtilityFunctions().errorToast("Please select the image less than or equal to 2 mb ");
                                       print("FileSize....... $fileSizeInMB");
                                     }
 
@@ -275,7 +275,7 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
                                           width: size.width*0.02,
                                         ),
                                         AutoSizeText(
-                                          "Shop Cover Photo",
+                                          "Shop Cover Photo (Max size 2 mb)",
                                           style: GoogleFonts.openSans(
                                               color: Colors.black54,
                                               fontSize: size.height * 0.02,
@@ -332,7 +332,7 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
                               height: size.height * 0.03,
                             ),
                             AutoSizeText(
-                              "Add your portfolio Photos",
+                              "Add your portfolio Photos (Max size 2 mb)",
                               style: GoogleFonts.openSans(
                                   color: Colors.black,
                                   fontSize: size.height * 0.02,
@@ -421,14 +421,14 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
                                                         fileSizeInBytes / 1024;
                                                     double fileSizeInMB =
                                                         fileSizeInKB / 1024;
-                                                    if (fileSizeInMB <= 7) {
+                                                    if (fileSizeInMB <= 2) {
                                                       setState(() {
                                                         portfolioImage_1 = value.toString();
                                                       });
 
                                                     } else {
 
-                                                      UtilityFunctions().errorToast("Please select the image less than or equal to 7 mb ");
+                                                      UtilityFunctions().errorToast("Please select the image less than or equal to 2 mb ");
                                                       print("FileSize....... $fileSizeInMB");
                                                     }
 
@@ -533,7 +533,7 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
                                                         fileSizeInBytes / 1024;
                                                     double fileSizeInMB =
                                                         fileSizeInKB / 1024;
-                                                    if (fileSizeInMB <= 7) {
+                                                    if (fileSizeInMB <= 2) {
                                                       setState(() {
                                                         portfolioImage_2 =
                                                             value
@@ -542,7 +542,7 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
 
                                                     } else {
 
-                                                      UtilityFunctions().errorToast("Please select the image less than or equal to 7 mb ");
+                                                      UtilityFunctions().errorToast("Please select the image less than or equal to 2 mb ");
                                                       print("FileSize....... $fileSizeInMB");
                                                     }
 
@@ -660,7 +660,7 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
                                                         fileSizeInBytes / 1024;
                                                     double fileSizeInMB =
                                                         fileSizeInKB / 1024;
-                                                    if (fileSizeInMB <= 7) {
+                                                    if (fileSizeInMB <= 2) {
                                                       setState(() {
                                                         portfolioImage_3 =
                                                             value
@@ -668,7 +668,7 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
                                                       });
                                                     } else {
 
-                                                      UtilityFunctions().errorToast("Please select the image less than or equal to 7 mb ");
+                                                      UtilityFunctions().errorToast("Please select the image less than or equal to 2 mb ");
                                                       print("FileSize....... $fileSizeInMB");
                                                     }
 
@@ -773,7 +773,7 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
                                                         fileSizeInBytes / 1024;
                                                     double fileSizeInMB =
                                                         fileSizeInKB / 1024;
-                                                    if (fileSizeInMB <= 7) {
+                                                    if (fileSizeInMB <= 2) {
                                                       setState(() {
                                                         portfolioImage_4 =
                                                             value
@@ -782,7 +782,7 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
 
                                                     } else {
 
-                                                      UtilityFunctions().errorToast("Please select the image less than or equal to 7 mb ");
+                                                      UtilityFunctions().errorToast("Please select the image less than or equal to 2 mb ");
                                                       print("FileSize....... $fileSizeInMB");
                                                     }
 
@@ -846,7 +846,7 @@ class _RegistrationShopDetailState extends State<RegistrationShopDetail> {
                                       portfolioImage_4.isEmpty ||
                                       portfolioImage_4.isEmpty
                                       ? Colors.grey
-                                      : Colors.purple.shade300,
+                                      : buttonColor,
                                 ),
                                 onPressed: () async {
                                   if (shopNameController.text.isNotEmpty &&

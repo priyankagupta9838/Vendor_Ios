@@ -152,12 +152,12 @@ class _UserRegistrationProfileState extends State<UserRegistrationProfile> {
               ),
               SizedBox(
                 width: size.width,
-                height: size.height*0.13,
+                height: size.height*0.1,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SizedBox(
-                      height: size.height*0.13,
+                      height: size.height*0.1,
                       width: size.width*0.43,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,7 +173,7 @@ class _UserRegistrationProfileState extends State<UserRegistrationProfile> {
                             height: size.height*0.01,
                           ),
                           SizedBox(
-                            height: size.height*0.083,
+                            height: size.height*0.053,
                             width: size.width*0.9,
                             child: TextField(
                               controller: firstNameController,
@@ -183,14 +183,14 @@ class _UserRegistrationProfileState extends State<UserRegistrationProfile> {
                                 fontSize: size.height*0.02,
                               ),
                               decoration: InputDecoration(
-                          error: AutoSizeText("Mention on pan card",
-                            maxLines: 1,
-                            style: GoogleFonts.openSans(
-                           fontWeight: FontWeight.w400,
-                           color: Colors.black,
-                           fontSize: size.height*0.013,
-                         ),
-                       ),
+                       //    error: AutoSizeText("Mention on pan card",
+                       //      maxLines: 1,
+                       //      style: GoogleFonts.openSans(
+                       //     fontWeight: FontWeight.w400,
+                       //     color: Colors.black,
+                       //     fontSize: size.height*0.013,
+                       //   ),
+                       // ),
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.all(Radius.circular(size.width*0.02)),
                                       borderSide: const BorderSide(
@@ -216,7 +216,7 @@ class _UserRegistrationProfileState extends State<UserRegistrationProfile> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height*0.13,
+                      height: size.height*0.1,
                       width: size.width*0.43,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -232,7 +232,7 @@ class _UserRegistrationProfileState extends State<UserRegistrationProfile> {
                             height: size.height*0.01,
                           ),
                           SizedBox(
-                            height: size.height*0.083,
+                            height: size.height*0.053,
                             width: size.width*0.9,
                             child: TextField(
                               controller: lastNameController,
@@ -242,14 +242,14 @@ class _UserRegistrationProfileState extends State<UserRegistrationProfile> {
                                 fontSize: size.height*0.02,
                               ),
                               decoration: InputDecoration(
-                                  error: AutoSizeText("Mention on pan card",
-                                    maxLines: 1,
-                                    style: GoogleFonts.openSans(
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.black,
-                                      fontSize: size.height*0.013,
-                                    ),
-                                  ),
+                                  // error: AutoSizeText("Mention on pan card",
+                                  //   maxLines: 1,
+                                  //   style: GoogleFonts.openSans(
+                                  //     fontWeight: FontWeight.w400,
+                                  //     color: Colors.black,
+                                  //     fontSize: size.height*0.013,
+                                  //   ),
+                                  // ),
                                   enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.all(Radius.circular(size.width*0.02)),
                                       borderSide: const BorderSide(
@@ -303,9 +303,8 @@ class _UserRegistrationProfileState extends State<UserRegistrationProfile> {
                             initialDate: DateTime.now(),
                             firstDate: DateTime(1900),
                             lastDate: DateTime(3000));
-
                         if (pickedDate != null) {
-                          String formattedDate = DateFormat('dd-MM-yyyy').format(pickedDate);
+                          String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
                           setState(() {
                             dobController.text=formattedDate;
                           });
@@ -324,14 +323,23 @@ class _UserRegistrationProfileState extends State<UserRegistrationProfile> {
                         ),
                         enabled: false,
                         decoration: InputDecoration(
+                            error: AutoSizeText(""
+                                "Name and DOB should be as per pan card*",
+                              maxLines: 1,
+                              style: GoogleFonts.openSans(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black87,
+                                fontSize: size.height*0.013,
+                              ),
+                            ),
                             border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(size.width*0.02)),
-                            borderSide:   const BorderSide(
-                                color:
-                                Colors.black54,
-                                width: 1
-                            )
-                        ),
+                                borderRadius: BorderRadius.all(Radius.circular(size.width*0.02)),
+                                borderSide:   const BorderSide(
+                                    color:
+                                    Colors.black54,
+                                    width: 1
+                                )
+                            ),
                             disabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(size.width*0.02)),
                                 borderSide:   const BorderSide(
@@ -356,13 +364,16 @@ class _UserRegistrationProfileState extends State<UserRegistrationProfile> {
                                     width: 1
                                 )
                             ),
-                            hintText: "DD/MM/YY",
+                            hintText: "YY/MM/DD",
                             contentPadding: EdgeInsets.all(size.height*0.01)
                         ),
                         textAlign: TextAlign.start,
 
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: size.height*0.01,
                   ),
                 ],
               ),

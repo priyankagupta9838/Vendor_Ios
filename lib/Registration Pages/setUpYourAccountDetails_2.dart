@@ -13,6 +13,7 @@ import 'package:vendor/Registration%20Pages/detailsavedscreen.dart';
 import '../Constraints.dart';
 import '../utilityfunctions.dart';
 
+
 class AccountDetails2 extends StatefulWidget {
   const AccountDetails2({
     super.key,
@@ -259,12 +260,13 @@ class _AccountDetails2State extends State<AccountDetails2> {
                             setState(() {});
                           } else {
                             ValidationApi()
-                                .validatePanNumber(value.toString())
+                                .validatePanNumber(value.toString(), userRegisterData["firstName"].toString(), userRegisterData["lastName"].toString(), userRegisterData["dob"].toString())
                                 .then((value) {
                               if (value == true) {
                                 panValidation = true;
                                 setState(() {});
                               } else {
+                                UtilityFunctions().errorToast("Please check your Name and DOB it should be as per pan card*");
                                 panValidation = false;
                                 setState(() {});
                               }
@@ -343,7 +345,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                                             fileSizeInBytes / 1024;
                                         double fileSizeInMB =
                                             fileSizeInKB / 1024;
-                                        if (fileSizeInMB <= 7) {
+                                        if (fileSizeInMB <= 5) {
                                           panCardImagePath = value.path;
                                           setState(() {});
                                           print(
@@ -364,7 +366,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                               const AutoSizeText("or drag and drop ")
                             ],
                           ),
-                          const AutoSizeText("PDF or JPG (max 7 MB)")
+                          const AutoSizeText("PNG or JPG (max 5 MB)")
                         ],
                       ),
                     ),
@@ -473,7 +475,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                                             fileSizeInBytes / 1024;
                                         double fileSizeInMB =
                                             fileSizeInKB / 1024;
-                                        if (fileSizeInMB <= 7) {
+                                        if (fileSizeInMB <= 5) {
                                           adharCardImagePath = value.path;
                                           if (kDebugMode) {
                                             print(
@@ -487,7 +489,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                                         }
                                         if (kDebugMode) {
                                           print(
-                                              "File size is : $adharCardImagePath");
+                                              "File size is : $fileSizeInMB");
                                         }
                                       } else {
                                         UtilityFunctions().errorToast(
@@ -499,7 +501,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                               const AutoSizeText("or drag and drop ")
                             ],
                           ),
-                          const Text("PDF or JPG (max 7 MB)")
+                          const Text("PNG or JPG (max 5 MB)")
                         ],
                       ),
                     ),
@@ -614,7 +616,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                                             fileSizeInBytes / 1024;
                                         double fileSizeInMB =
                                             fileSizeInKB / 1024;
-                                        if (fileSizeInMB <= 7) {
+                                        if (fileSizeInMB <= 5) {
                                           gstinImagePath = value.path;
                                           if (kDebugMode) {}
                                           setState(() {});
@@ -633,7 +635,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                               const AutoSizeText("or drag and drop ")
                             ],
                           ),
-                          const Text("PDF or JPG (max 7 MB)")
+                          const Text("PNG or JPG (max 5 MB)")
                         ],
                       ),
                     ),
@@ -738,7 +740,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                                             fileSizeInBytes / 1024;
                                         double fileSizeInMB =
                                             fileSizeInKB / 1024;
-                                        if (fileSizeInMB <= 7) {
+                                        if (fileSizeInMB <= 5) {
                                           cinImagePath = value.path;
                                           if (kDebugMode) {}
                                           setState(() {});
@@ -757,7 +759,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                               const AutoSizeText("or drag and drop ")
                             ],
                           ),
-                          const Text("PDF or JPG (max 7 MB)")
+                          const Text("PNG or JPG (max 5 MB)")
                         ],
                       ),
                     ),
@@ -832,7 +834,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                                         image.lengthSync();
                                         double fileSizeInKB = fileSizeInBytes / 1024;
                                         double fileSizeInMB = fileSizeInKB / 1024;
-                                        if (fileSizeInMB <= 7) {
+                                        if (fileSizeInMB <= 5) {
                                           establishmentLicenseImage = value.path;
                                           setState(() {});
                                           print(
@@ -854,7 +856,7 @@ class _AccountDetails2State extends State<AccountDetails2> {
                               const AutoSizeText("or drag and drop ")
                             ],
                           ),
-                          const AutoSizeText("PDF or JPG (max 7 MB)")
+                          const AutoSizeText("PNG or JPG (max 5 MB)")
                         ],
                       ),
                     ),

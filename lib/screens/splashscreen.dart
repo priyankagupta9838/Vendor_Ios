@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 0), () {
       setState(() {
         _isVisible = true;
       });
@@ -92,11 +92,6 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ),
 
-                /*CircleAvatar(
-                  backgroundColor: Colors.purple.shade100,
-                  radius: size.height * 0.042,
-                  backgroundImage: const AssetImage("assets/logo/download.png"),
-                ),*/
               ),
               SizedBox(
                 height: size.height * 0.05,

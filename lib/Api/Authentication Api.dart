@@ -338,7 +338,6 @@ class Authentication {
     ));
 
 
-
     try {
       var response = await request.send().timeout(const Duration( seconds: 60));
       var responseMessage = await response.stream.bytesToString();
@@ -350,6 +349,7 @@ class Authentication {
         result=responseData["message"];
       }
     } catch (error) {
+      print("Error...$error");
       result="something went wrong";
     }
 
@@ -404,8 +404,21 @@ class Authentication {
 
   Future<String> newPassword(String newPassword ,String otp , String username) async {
     String loginValue = "";
+
+    bool isPhoneNumber=false;
+    if (username == null) {
+      isPhoneNumber = false;
+    }
+    else {
+      isPhoneNumber = double.tryParse(username) != null;
+    }
     Map data = {
-      "username":username,
+      "username":
+      isPhoneNumber
+          ?
+      "91$username"
+      :
+      username,
       "otp":otp,
       "new_password": newPassword,
       "confirm_password": newPassword

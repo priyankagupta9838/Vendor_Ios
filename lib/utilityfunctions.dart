@@ -1,3 +1,4 @@
+import 'dart:typed_data';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -9,18 +10,28 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:vendor/Constraints.dart';
 import 'dart:io';
 class UtilityFunctions {
+
   Future<String> imagePicker() async {
     String filePath = "";
     ImagePicker imagePicker = ImagePicker();
     print(imagePicker);
     XFile? file = await imagePicker.pickImage(
-        source: ImageSource.gallery);
+        source: ImageSource.gallery,
+    );
     print(file?.path);
     if (file!.path.isNotEmpty) {
       filePath = file.path;
     }
     return filePath;
   }
+
+
+
+
+
+
+
+
 
   Future errorScreen(BuildContext context, String errorString) {
     Size size = MediaQuery

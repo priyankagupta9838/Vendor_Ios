@@ -251,6 +251,14 @@ class _LinearGraphState extends State<LinearGraph> {
           } else {
             return  LineChart(
               LineChartData(
+                borderData: FlBorderData(
+                    border: const Border(
+                        top: BorderSide.none,
+                        right: BorderSide.none,
+                        left: BorderSide(color: Colors.black),
+                        bottom: BorderSide( color: Colors.black)
+                    )
+                ),
                 gridData: FlGridData(
                   show: true,
                   drawVerticalLine: true,

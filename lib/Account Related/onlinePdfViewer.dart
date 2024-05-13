@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
+//import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
 class OnlinePdfViewer extends StatefulWidget {
 
@@ -20,16 +20,18 @@ class _OnlinePdfViewerState extends State<OnlinePdfViewer> {
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          height: size.height*.8,
-          width: size.width*1,
-          color: Colors.transparent,
+            height: size.height*.8,
+            width: size.width*1,
+            color: Colors.transparent,
 
-          child:  const PDF(enableSwipe: true,swipeHorizontal: false,fitEachPage: true,autoSpacing: false,).fromUrl(
-              widget.url,
-              placeholder: (error)=>const Center(child: Text("loading...",
-              ),
-              )
-          ),
+            child: Text('PDF'
+              //const PDF(enableSwipe: true,swipeHorizontal: false,fitEachPage: true,autoSpacing: false,).fromUrl(
+              //   widget.url,
+              //  placeholder: (error)=>const Center(child: Text("loading...",
+              //   ),
+              //  )
+            )
+          //   ),
         ),
       ),
     );

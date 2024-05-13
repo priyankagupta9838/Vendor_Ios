@@ -2,6 +2,7 @@
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:chatview/chatview.dart';
+//import 'package:chatview/chatview.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
@@ -166,7 +167,8 @@ class _OpenChatState extends State<OpenChat> {
                   // ),
                   elevation: 0,
                   backGroundColor: const Color.fromRGBO(174, 144, 194, 1),
-                  profilePicture: "https://firebasestorage.googleapis.com/v0/b/mykanjee-55ea0.appspot.com/o/MykanjeeChatImages%2F22-4%2F1714372215610?alt=media&token=245ca624-2a73-4c0a-af2b-c6626525dec6",
+                 profilePicture: "",
+                 // profilePicture: "https://firebasestorage.googleapis.com/v0/b/mykanjee-55ea0.appspot.com/o/MykanjeeChatImages%2F22-4%2F1714372215610?alt=media&token=245ca624-2a73-4c0a-af2b-c6626525dec6",
                   backArrowColor: Colors.white70,
                   chatTitle: widget.userName.toString(),
                   chatTitleTextStyle: const TextStyle(
@@ -413,6 +415,7 @@ class _OpenChatState extends State<OpenChat> {
           },
         ),
       ),
+
     );
   }
 
@@ -550,7 +553,7 @@ class _OpenChatState extends State<OpenChat> {
         .putFile(File(file.path)).whenComplete(() async {
 
       String downloadUrl =
-          await imageFolder.getDownloadURL();
+      await imageFolder.getDownloadURL();
     });
   }
 

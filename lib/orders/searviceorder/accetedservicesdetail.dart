@@ -6,7 +6,6 @@ import 'package:page_transition/page_transition.dart';
 import '../../Constraints.dart';
 import '../../chat system/openChat.dart';
 import '../../utilityfunctions.dart';
-import '../Invoice.dart';
 
 
 class AcceptedServicesDetails extends StatefulWidget {
@@ -421,10 +420,7 @@ class _AcceptedServicesDetailsState extends State<AcceptedServicesDetails> {
                           SizedBox(
                             height: size.height*0.02,
                           ),
-                          // Padding(
-                          //   padding:  EdgeInsets.only(left: size.width*0.02),
-                          //   child: DownloadInvoice(orderId: widget.orderDetails["order_details"][0]["order_id"],),
-                          // ),
+
                           SizedBox(
                             height: size.height*0.04,
                           ),
@@ -446,20 +442,5 @@ class _AcceptedServicesDetailsState extends State<AcceptedServicesDetails> {
   }
 
 
-  // _selectTime(BuildContext context) async {
-  //   final TimeOfDay? timeOfDay = await showTimePicker(
-  //
-  //     context: context,
-  //     initialTime: selectedTime,
-  //     initialEntryMode: TimePickerEntryMode.inputOnly,
-  //   );
-  //   if (timeOfDay != null && timeOfDay != selectedTime) {
-  //     setState(() {
-  //       selectedTime = timeOfDay;
-  //       String timer =
-  //           "${timeOfDay.hour} : ${timeOfDay.minute} ${timeOfDay.period.toString().split(".")[1]}";
-  //       timeInputController = TextEditingController(text: timer);
-  //     });
-  //   }
-  // }
+
 }

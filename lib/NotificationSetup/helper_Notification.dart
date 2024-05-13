@@ -128,6 +128,7 @@ class NotificationServices{
 
 
   Future<String?>getToken() async {
+    await FirebaseMessaging.instance.requestPermission();
     String? deviceToken=await FirebaseMessaging.instance.getToken();
     return deviceToken;
   }

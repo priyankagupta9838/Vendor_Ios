@@ -6,13 +6,18 @@ import 'package:vendor/Constraints.dart';
 
 
 class ValidationApi {
-  Future<bool> validatePanNumber(String panNumber) async {
+  Future<bool> validatePanNumber(String panNumber,String firstname,String lastname,String dob) async {
     var apiUrl = '$baseIp/api/auth/verify-pan-number';
 
     try {
       final response = await http.post(
         Uri.parse(apiUrl),
-        body: {'pan': panNumber},
+        body: {
+          'pan': panNumber,
+          "name": firstname.toString()+lastname.toString(),
+          "dob": dob.toString()
+
+        },
       );
 
       if (response.statusCode == 200) {
@@ -39,6 +44,7 @@ class ValidationApi {
       return false;
     }
   }
+
 
 
   Future<bool> validateAadharNumber(String aadharNumber) async {

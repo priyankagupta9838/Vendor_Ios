@@ -21,12 +21,6 @@ class UpCycleServices extends StatefulWidget {
 
 class _UpCycleServicesState extends State<UpCycleServices> {
   @override
-  void initState() {
-    // TODO: implement initState
-
-    super.initState();
-  }
-  @override
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
     return Column(
@@ -38,14 +32,11 @@ class _UpCycleServicesState extends State<UpCycleServices> {
                     physics: const NeverScrollableScrollPhysics(), itemBuilder: (
 
             context, index) {
-
-         //   var servicetypeId=widget.serviceType[index]["id"];
           return   StreamBuilder(
             stream: VendorServicesApi().fetchStitchingServices(widget.serviceType[index]["id"].toString()) ,
             builder: (context, snapshot) {
               if( snapshot.hasData ){
                 var data=jsonDecode(snapshot.data!.body);
-                //print(data["data"]);
                 return snapshot.data?.statusCode==200 && data["data"].length>0
                     ?
                 Column(
@@ -174,7 +165,7 @@ class _UpCycleServicesState extends State<UpCycleServices> {
                                                 if(value=="success"){
                                                   // change the state
                                                   BlocProvider.of<AddServiceBlo>(context).add(UpdateServicesEvent());
-                                                  UtilityFunctions().successToast("Vendor services updated successfully.");
+                                                  UtilityFunctions().successToast("Vendor services off successfully.");
 
                                                 }
                                               });
@@ -185,7 +176,7 @@ class _UpCycleServicesState extends State<UpCycleServices> {
 
                                                   // change the state
                                                   BlocProvider.of<AddServiceBlo>(context).add(UpdateServicesEvent());
-                                                  UtilityFunctions().successToast("Vendor services updated successfully.");
+                                                  UtilityFunctions().successToast("Vendor services on successfully.");
 
                                                 }
                                               });
@@ -193,15 +184,6 @@ class _UpCycleServicesState extends State<UpCycleServices> {
                                           },
                                         );
                                       },),
-
-                                      // IconButton(onPressed: (){
-                                      //
-                                      //   Navigator.push(context, PageTransition(
-                                      //       type: PageTransitionType.rightToLeft,
-                                      //       duration: const Duration(milliseconds: 300),
-                                      //       childCurrent:   UpCycleServices(serviceType: [],),
-                                      //       child:   const EditService()));
-                                      // }, icon: const Icon(Icons.edit_outlined))
 
                                     ],
                                   ),

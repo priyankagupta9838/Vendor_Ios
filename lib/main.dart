@@ -7,7 +7,6 @@ import 'package:vendor/Constraints.dart';
 import 'package:vendor/StorageStream.dart';
 import 'package:vendor/screens/splashscreen.dart';
 import 'NotificationSetup/helper_Notification.dart';
-import 'Registration Pages/setyourProfile.dart';
 import 'StateManagement/PageBloc.dart';
 import 'firebase_options.dart';
 
@@ -108,12 +107,14 @@ class _MyAppState extends State<MyApp> {
           useMaterial3: true,
         ),
         home:
+
         userToken!="null"
           ?
             const StorageStream()
             :
+
         const SplashScreen(),
-       // CheckConnection()
+
 
       ),
     );

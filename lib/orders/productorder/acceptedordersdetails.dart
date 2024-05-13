@@ -9,7 +9,7 @@ import 'package:page_transition/page_transition.dart';
 import '../../Constraints.dart';
 import '../../chat system/openChat.dart';
 import '../../utilityfunctions.dart';
-import '../Invoice.dart';
+
 
 class AcceptedOrderDetails extends StatefulWidget {
    AcceptedOrderDetails({Key? key,required this.acceptedOrderDetails,required this.userDetail,required this.userAddress,required this.orderId}) : super(key: key);
@@ -530,10 +530,6 @@ class _AcceptedOrderDetailsState extends State<AcceptedOrderDetails> {
                       SizedBox(
                         height: size.height*0.03,
                       ),
-                      // Padding(
-                      //   padding:  EdgeInsets.only(left: size.width*0.024,right: size.width*0.024),
-                      //   child: DownloadInvoice(orderId: widget.acceptedOrderDetails["order_id"],),
-                      // )
 
                     ],
                   ),

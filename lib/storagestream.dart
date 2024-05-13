@@ -33,8 +33,6 @@ import 'Authentication/login.dart';
 import 'Constraints.dart';
 import 'navigationbar.dart';
 
-
-
 class StorageStream extends StatefulWidget {
   const StorageStream({Key? key}) : super(key: key);
 

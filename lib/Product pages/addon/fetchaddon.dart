@@ -1,15 +1,10 @@
 import 'dart:convert';
-
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-
 import '../../Api/vendorservicesapi.dart';
-import '../../Constraints.dart';
 import '../../StateManagement/PageBloc.dart';
 import '../../StateManagement/PageEvent.dart';
 import '../../StateManagement/PageState.dart';
@@ -24,13 +19,7 @@ class FetchAddOnServices extends StatefulWidget {
 }
 
 class _FetchAddOnServicesState extends State<FetchAddOnServices> {
-  @override
-  void initState() {
-    // TODO: implement initState
 
-
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     Size size =MediaQuery.of(context).size;
@@ -44,7 +33,6 @@ class _FetchAddOnServicesState extends State<FetchAddOnServices> {
 
               context, index) {
 
-            //   var servicetypeId=widget.serviceType[index]["id"];
             return   BlocBuilder<AddOnBlo,AddOnState>(builder: (context, state) {
               return StreamBuilder(
                 stream: VendorServicesApi().fetchAddOnServices(widget.serviceType[index]["id"].toString()) ,
@@ -149,7 +137,7 @@ class _FetchAddOnServicesState extends State<FetchAddOnServices> {
                                                   if(value=="success"){
                                                     // change the state
                                                     BlocProvider.of<AddOnBlo>(context).add(UpdateAddOnEvent());
-                                                    UtilityFunctions().successToast("Vendor services updated successfully.");
+                                                    UtilityFunctions().successToast("Vendor services addon off successfully.");
 
                                                   }
                                                 });
@@ -160,7 +148,7 @@ class _FetchAddOnServicesState extends State<FetchAddOnServices> {
 
                                                     // change the state
                                                     BlocProvider.of<AddOnBlo>(context).add(UpdateAddOnEvent());
-                                                    UtilityFunctions().successToast("Vendor services updated successfully.");
+                                                    UtilityFunctions().successToast("Vendor services addon on successfully.");
 
                                                   }
                                                 });
