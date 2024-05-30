@@ -52,7 +52,7 @@ PODS:
   - abseil/base/base_internal (1.20240116.2):
     - abseil/base/config
     - abseil/meta/type_traits
-    - abseil/xcprivacy
+    - abseil/xcprivacya
   - abseil/base/config (1.20240116.2):
     - abseil/xcprivacy
   - abseil/base/core_headers (1.20240116.2):
